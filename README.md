@@ -1,5 +1,5 @@
 # Implementation-of-UART-Protocol-on-FPGA
-## 📄 Abstract
+## Abstract
 
 This project presents the design and implementation of a **UART (Universal Asynchronous Receiver Transmitter)** controller on FPGA using Verilog. The system is implemented on the **Nexys A7 (Artix-7) board** and enables serial communication between the FPGA and a PC via the PuTTY terminal.
 
@@ -7,7 +7,7 @@ The design follows a **modular architecture**, consisting of a baud rate generat
 
 ---
 
-## 📌 Introduction
+## Introduction
 
 UART (Universal Asynchronous Receiver Transmitter) is a widely used serial communication protocol that enables data exchange between devices without requiring a shared clock signal. Instead, both transmitter and receiver operate at a predefined **baud rate**, which determines the speed of data transmission.
 
@@ -19,11 +19,11 @@ Due to its simplicity and efficiency, UART is commonly used in **FPGA-to-PC comm
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 The UART design is divided into three main modules:
 
-### 🔹 Baud Rate Generator
+### Baud Rate Generator
 
 The baud rate generator produces timing enable signals required for transmission and reception. It derives lower-frequency enable pulses from the high-frequency system clock (100 MHz).
 
@@ -32,7 +32,7 @@ The baud rate generator produces timing enable signals required for transmission
 
 ---
 
-### 🔹 Transmitter (TX)
+### Transmitter (TX)
 
 The transmitter converts parallel data into serial form using a Finite State Machine (FSM).  
 It follows the UART frame format:
@@ -45,7 +45,7 @@ Transmission is controlled using the baud rate enable signal.
 
 ---
 
-### 🔹 Receiver (RX)
+### Receiver (RX)
 
 The receiver reconstructs serial data into parallel form. It uses **16x oversampling** to accurately sample incoming bits and improve noise immunity.
 
@@ -56,13 +56,13 @@ The receiver reconstructs serial data into parallel form. It uses **16x oversamp
 
 ---
 
-## ⚙️ Working Principle
+## Working Principle
 
 Data is sent from the PC via PuTTY to the FPGA over a serial connection. The receiver module detects and samples the incoming data stream, reconstructs it into parallel format, and makes it available as output. Similarly, the transmitter module sends data from FPGA to PC when enabled.
 
 ---
 
-## 🔌 Hardware Setup
+## Hardware Setup
 
 - FPGA Board: **Nexys A7 (Artix-7)**  
 - Connect FPGA **RX → PC TX**  
@@ -71,7 +71,7 @@ Data is sent from the PC via PuTTY to the FPGA over a serial connection. The rec
 
 ---
 
-## 🖥️ PuTTY Configuration
+## PuTTY Configuration
 
 To establish communication, configure PuTTY with the following settings:
 
@@ -83,32 +83,13 @@ To establish communication, configure PuTTY with the following settings:
 
 ---
 
-## 📊 Results
+## Results
 
 - Successful UART communication between FPGA and PC  
 - Accurate data transmission and reception  
 - Verified on **Nexys A7 hardware using PuTTY terminal**  
 
 *(Add screenshots / demo video here)*
-
----
-
-## ⚠️ Limitations
-
-- No data valid signal for received data  
-- No error detection (framing/parity)  
-- No FIFO buffering  
-- Fixed data width (8-bit)  
-
----
-
-## 🚀 Future Improvements
-
-- Add data valid signal in RX  
-- Implement framing and parity error detection  
-- Introduce FIFO buffers  
-- Support configurable data formats  
-- Develop command-based UART system  
 
 ---
 
