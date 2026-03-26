@@ -14,8 +14,8 @@ UART (Universal Asynchronous Receiver Transmitter) is a widely used serial commu
 ![UART](uart.png)
 
 Data in UART is transmitted in the form of frames, typically consisting of a **start bit (logic 0)**, followed by **data bits (usually 8 bits, LSB first)**, and one or more **stop bits (logic 1)**. Since communication is asynchronous, accurate timing is essential for correct data interpretation.
-!
-[UART_Frame](uart_frame.png)
+
+![UART_Frame](uart_frame.png)
 
 To improve reliability, especially in the presence of noise or timing variations, UART receivers often employ **oversampling techniques**. In this design, **16x oversampling** is used, where each bit is sampled multiple times and the optimal sampling point is selected to ensure accurate data recovery.
 
