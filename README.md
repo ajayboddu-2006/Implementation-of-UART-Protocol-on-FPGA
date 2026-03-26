@@ -11,6 +11,8 @@ The design follows a **modular architecture**, consisting of a baud rate generat
 
 UART (Universal Asynchronous Receiver Transmitter) is a widely used serial communication protocol that enables data exchange between devices without requiring a shared clock signal. Instead, both transmitter and receiver operate at a predefined **baud rate**, which determines the speed of data transmission.
 
+![UART](uart.png)
+
 Data in UART is transmitted in the form of frames, typically consisting of a **start bit (logic 0)**, followed by **data bits (usually 8 bits, LSB first)**, and one or more **stop bits (logic 1)**. Since communication is asynchronous, accurate timing is essential for correct data interpretation.
 
 To improve reliability, especially in the presence of noise or timing variations, UART receivers often employ **oversampling techniques**. In this design, **16x oversampling** is used, where each bit is sampled multiple times and the optimal sampling point is selected to ensure accurate data recovery.
