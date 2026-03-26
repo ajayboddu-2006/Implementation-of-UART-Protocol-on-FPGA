@@ -81,11 +81,19 @@ Data is sent from the PC via PuTTY to the FPGA over a serial connection. The rec
 - Accurate data transmission and reception  
 - Verified on **Nexys A7 hardware using PuTTY terminal**  
 
+### Simulation Output
+
 ![UART](sim.png)
+
+### Synthesized Nelist
 
 ![UART](schematic.png)
 
+### FPGA - PC UART Communication
+
 ![UART](PC_to_FPGA.jpeg)
+
+---
 
 ![UART](FPGA_to_PC.png)
 
