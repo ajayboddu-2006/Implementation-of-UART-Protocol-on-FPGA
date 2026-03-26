@@ -75,25 +75,19 @@ Data is sent from the PC via PuTTY to the FPGA over a serial connection. The rec
 
 ---
 
-## PuTTY Configuration
-
-To establish communication, configure PuTTY with the following settings:
-
-- Baud Rate: 9600  
-- Data Bits: 8  
-- Stop Bits: 1  
-- Parity: None  
-- Flow Control: None  
-
----
-
 ## Results
 
 - Successful UART communication between FPGA and PC  
 - Accurate data transmission and reception  
 - Verified on **Nexys A7 hardware using PuTTY terminal**  
 
-*(Add screenshots / demo video here)*
+![UART](sim.png)
+
+![UART](schematic.png)
+
+![UART](PC_to_FPGA.jpeg)
+
+![UART](FPGA_to_PC.png)
 
 ---
 
